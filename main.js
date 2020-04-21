@@ -2,7 +2,7 @@ const fetchImage = () => {
 
   axios.defaults.headers.common['x-api-key'] = 'dfde1420-ea25-435f-adfe-6ec087c162f1';
 
-  axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit: 1, size: 'full' } })
+  axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit: 1, size: 'med' } })
     .then((res) => {
       console.log('response:', res)
 
