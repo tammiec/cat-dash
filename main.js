@@ -15,9 +15,11 @@ const fetchImage = () => {
         } else {
           // image exists - now what??
           console.log('img:', img);
-          const image = document.getElementById('cat-photo');
-          console.log('image:', image)
+          const container = document.getElementById('photo-container');
+          const image = document.createElement('img');
           image.src = img;
+          image.alt = 'Random image of a cat';
+          container.appendChild(image);
         }
       }
     }).catch((err) => {
