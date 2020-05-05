@@ -2,7 +2,7 @@ const fetchImage = () => {
 
   axios.defaults.headers.common['x-api-key'] = 'dfde1420-ea25-435f-adfe-6ec087c162f1';
 
-  axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit: 1, size: 'med' } })
+  axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit: 1, size: 'full' } })
     .then((res) => {
       console.log('response:', res)
 
@@ -15,8 +15,8 @@ const fetchImage = () => {
         } else {
           // image exists - now what??
           console.log('img:', img);
-          const container = document.getElementById('photo-container');
           const image = document.createElement('img');
+          const container = document.getElementById('photo-container');
           image.src = img;
           image.alt = 'Random image of a cat';
           container.appendChild(image);
@@ -31,4 +31,12 @@ const fetchImage = () => {
 
 window.onload = () => {
   fetchImage();
+
+  const getNewKittyButton = document.getElementById('new-kitty-pls');
+
+  getNewKittyButton.addEventListener('click', () => {
+    const oldImg = document.getElementsByTagName('img')[0];
+    oldImg.remove();
+    fetchImage();
+  });
 };
