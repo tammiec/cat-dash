@@ -5,25 +5,36 @@
     <title>Simple Greeting Dashboard</title>
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css"> -->
     <link rel="stylesheet" href="main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Staatliches&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </head>
   <body>
 
     <header>
-      <button id="settings-button">Settings</button>
+      <div id='settings-button-container' class='settings-button-container'>
+        <button id="settings-button">Settings</button>
+      </div>
       <div class="settings" id="settings">
         <form class="name-form" id="name-form" action="#">
             <input class="name-input" type="text"
               id="name-input" placeholder="Type your name here...">
-            <button type="submit" class="name-button">Add</button>
+            <button type="submit" class="name-button">Update Name</button>
         </form>
+        <div id='color-picker'>
+          <button class='color-button' id='light-blue' value='#C0EDF9'></button>
+          <button class='color-button' id='coral' value='#F9C0C0'></button>
+          <button class='color-button' id='lavender' value='#CCC0F9'></button>
+          <button class='color-button' id='white' value='#FFFFF'></button>
+        </div>
       </div>
     </header>
 
-    <h1>Hello </h1>
-    <div id='photo-container'>
-    </div>
+    <main>
+      <h1 id='greeting'></h1>
+      <div id='photo-container'>
+      </div>
+    </main>
 
     <footer>
       <button id='new-kitty-pls'>Give me another kitty</button>

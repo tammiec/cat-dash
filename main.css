@@ -1,4 +1,17 @@
+html, button, input {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Staatliches', cursive;
+}
+
 body {
+  margin: 0;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +27,52 @@ header {
   display: flex;
   height: 3em;
   align-items: center;
+  width: 100%;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border: 2px black solid;
+  border-radius: 30px;
+  background-color: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: transparent;
+}
+
+.settings-button-container {
+  display: flex;
+  z-index: 2;
+  width: 150px;
+  height: 3em;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+#settings-button {
+  z-index: 3;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  transform: translateX(-105%);
+  transition: transform 500ms;
+  z-index: 1;
+}
+
+.settings-open.settings {
+  transform: none;
 }
 
 footer {
@@ -22,6 +81,8 @@ footer {
   display: flex;
   height: 3em;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #photo-container {
