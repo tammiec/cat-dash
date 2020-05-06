@@ -7,6 +7,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Staatliches', cursive;
 }
 
+h3 {
+  margin-right: 0.5em;
+}
+
 body {
   margin: 0;
 }
@@ -46,6 +50,7 @@ input {
   padding: 5px 5px;
   border-radius: 5px;
   box-shadow: transparent;
+  margin-right: 0.5em;
 }
 
 .settings-button-container {
@@ -71,8 +76,46 @@ input {
   z-index: 1;
 }
 
+.settings > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1em;
+}
+
 .settings-open.settings {
   transform: none;
+}
+
+.color-button {
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin-right: 0.3em;
+}
+
+#blue {
+  background-color: #C0EDF9;
+}
+
+#coral {
+  background-color: #F9C0C0;
+}
+
+#lavender {
+  background-color: #CCC0F9;
+}
+
+#white {
+  background-color: #FFFFFF;
+}
+
+#green {
+  background-color: #CDF9C0;
+}
+
+#yellow {
+  background-color: #F9F0C0;
 }
 
 footer {
