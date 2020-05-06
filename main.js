@@ -1,23 +1,23 @@
 const fetchImage = () => {
 
-  axios.defaults.headers.common['x-api-key'] = 'dfde1420-ea25-435f-adfe-6ec087c162f1';
-
-  axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit: 1, size: 'full' } })
+  fetch('https://api.thecatapi.com/v1/images/search?limit=1&size=full')
     .then((res) => {
 
       if (res.status !== 200) {
         // handle client side error message for if status is anything other than 200 but not a request error
       } else {
-        const img = res.data[0].url;
-        if (img === undefined) {
-          // error handling for no image result
-        } else {
-          const image = document.createElement('img');
-          const container = document.getElementById('photo-container');
-          image.src = img;
-          image.alt = 'Random image of a cat';
-          container.appendChild(image);
-        }
+        res.json().then(data => {
+          const img = data[0].url;
+          if (img === undefined) {
+            // error handling for no image result
+          } else {
+            const image = document.createElement('img');
+            const container = document.getElementById('photo-container');
+            image.src = img;
+            image.alt = 'Random image of a cat';
+            container.appendChild(image);
+          }
+        })
       }
     }).catch((err) => {
       // handle request error here
@@ -36,7 +36,7 @@ window.onload = () => {
     fetchImage();
   });
 
-  // username variables
+  // username settings
   const storedUserName = localStorage.getItem('receivedName');
   let userName =  storedUserName ? storedUserName : 'Friend';
 
@@ -74,8 +74,8 @@ window.onload = () => {
   const storedColor = localStorage.getItem('receivedColor');
   let color =  storedColor ? storedColor : '#FFFFF';
 
+  // set initial colour
   const setColor = () => {
-    console.log('color:', color)
     const body = document.getElementsByTagName('body')[0];
     const settings = document.getElementById('settings-button-container');
     body.setAttribute('style', `background-color: ${color};`);
@@ -84,6 +84,7 @@ window.onload = () => {
  
   setColor();
 
+  // save and update colour
   const saveColor = () => {
     localStorage.setItem('receivedColor', color);
   };
@@ -97,7 +98,6 @@ window.onload = () => {
   const colorButtons = document.getElementsByClassName('color-button');
 
   for (let button of colorButtons) {
-    console.log('button:', button)
     button.addEventListener('click', (e) => {
       console.log('e:', e)
       changeColor(e.target.value);

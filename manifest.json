@@ -1,7 +1,7 @@
 {
-  "name": "Simple Greeting Dashboard",
+  "name": "Cat-Dash",
   "version": "1.0",
-  "description": "This Chrome extension greets the user each time they open a new tab",
+  "description": "This Chrome extension greets the user with a random kitty each time they open a new tab",
   "manifest_version": 2,
   "incognito": "split",
   "chrome_url_overrides": {

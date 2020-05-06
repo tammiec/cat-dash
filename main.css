@@ -32,6 +32,7 @@ header {
   height: 3em;
   align-items: center;
   width: 100%;
+  margin-top: 2px;
 }
 
 button {
@@ -126,6 +127,7 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2px;
 }
 
 #photo-container {
