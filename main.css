@@ -57,11 +57,12 @@ input {
 .settings-button-container {
   display: flex;
   z-index: 2;
-  width: 150px;
+  width: 120px;
   height: 3em;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
+  padding-left: 2px;
 }
 
 #settings-button {
